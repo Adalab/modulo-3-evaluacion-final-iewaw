@@ -1,25 +1,38 @@
 import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import "../scss/App.scss";
+import Filters from "./Filters";
+import CharacterList from "./CharacterList";
 
 import { fetchCharacters } from "../services/fetch";
 
 function App() {
-  const [characters, setCharacters] = useState({
-    id: "",
-    name: "",
-    species: "",
-    image: "",
-  });
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     fetchCharacters().then((data) => {
       setCharacters(data);
-      console.log(data);
     });
   }, []);
 
-  return <div>Harry Potter</div>;
+  return (
+    <div className="main">
+      <div>Harry Potter</div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <Filters />
+              <CharacterList characters={characters} />
+            </div>
+          }
+        />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
