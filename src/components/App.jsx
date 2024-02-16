@@ -54,7 +54,10 @@ function App() {
                 handleFilter={handleSearch}
                 filteredCharacter={filteredCharacter}
               />
-              <CharacterList characters={filteredCharacters} />
+              <CharacterList
+                characters={filteredCharacters}
+                filteredCharacter={filteredCharacter}
+              />
             </div>
           }
         />

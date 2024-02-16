@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import "../scss/CharacterList.scss";
 
-function CharacterList({ characters }) {
+function CharacterList({ characters, filteredCharacter }) {
   const renderCharacters = characters.map((character) => {
     return (
       <li className="card" key={character.id}>
@@ -26,7 +26,16 @@ function CharacterList({ characters }) {
   });
   return (
     <>
-      <ul className="list">{renderCharacters}</ul>
+      {characters && characters.length > 0 ? (
+        <ul className="list">{renderCharacters}</ul>
+      ) : (
+        <div className="warning">
+          <p>
+            🪄 No hay ningún personaje que coincida con la palabra "
+            {filteredCharacter}". 😿
+          </p>
+        </div>
+      )}
     </>
   );
 }
@@ -41,6 +50,7 @@ CharacterList.propTypes = {
       house: PropTypes.string.isRequired,
     })
   ),
+  filteredCharacter: PropTypes.string.isRequired,
 };
 
 export default CharacterList;
