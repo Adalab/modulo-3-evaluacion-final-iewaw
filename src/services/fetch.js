@@ -1,5 +1,5 @@
 export function fetchCharacters() {
-    return fetch('https://hp-api.onrender.com/api/characters/house/gryffindor')
+    return fetch('https://hp-api.onrender.com/api/characters')
         .then(response => response.json())
         .then(reponseData => {
             return reponseData.map((character) => {
@@ -7,7 +7,8 @@ export function fetchCharacters() {
                     id: character.id,
                     name: character.name,
                     species: character.species,
-                    image: character.image
+                    image: character.image,
+                    house: character.house
                 }
             })
         })

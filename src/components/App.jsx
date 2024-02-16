@@ -4,11 +4,14 @@ import { Route, Routes } from "react-router-dom";
 import "../scss/App.scss";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
+import cat from "../assets/cat.png";
 
 import { fetchCharacters } from "../services/fetch";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [filteredCharacter, setFilteredCharacter] = useState("");
+  const [selectedHouse, setSelectedHouse] = useState("Todas");
 
   useEffect(() => {
     fetchCharacters().then((data) => {
@@ -16,17 +19,42 @@ function App() {
     });
   }, []);
 
+  const filteredCharacters = characters
+    .filter((character) =>
+      character.name.toLowerCase().includes(filteredCharacter.toLowerCase())
+    )
+    .filter((character) =>
+      selectedHouse === "Todas" ? true : character.house === selectedHouse
+    );
+
+  const handleSearch = (filterType, value) => {
+    switch (filterType) {
+      case "character":
+        setFilteredCharacter(value);
+        break;
+      case "house":
+        setSelectedHouse(value);
+        break;
+    }
+  };
+
   return (
     <div className="main">
-      <div>Harry Potter</div>
+      <header className="header">
+        <img className="cat" src={cat} alt="imagen de un gato mago" />
+        <h1>Harry Potter</h1>
+      </header>
 
       <Routes>
         <Route
           path="/"
           element={
             <div>
-              <Filters />
-              <CharacterList characters={characters} />
+              <Filters
+                handleFilter={handleSearch}
+                filteredCharacter={filteredCharacter}
+              />
+              <CharacterList characters={filteredCharacters} />
             </div>
           }
         />

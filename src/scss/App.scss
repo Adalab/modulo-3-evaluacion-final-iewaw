@@ -1,5 +1,18 @@
 @import 'core/reset';
 
 .main {
-    background: linear-gradient(90deg, rgb(247, 219, 167), #e48484);
+    background: linear-gradient(90deg, #e48484, #F7DBA7);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #be5260;
+    font-size: 40px;
+}
+
+.cat {
+    height: 220px;
+    margin-right: 30px;
 }
