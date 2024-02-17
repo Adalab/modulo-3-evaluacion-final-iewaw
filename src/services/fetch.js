@@ -8,7 +8,9 @@ export function fetchCharacters() {
                     name: character.name,
                     species: character.species,
                     image: character.image,
-                    house: character.house
+                    house: character.house,
+                    gender: character.gender,
+                    alive: character.alive
                 }
             })
         })

@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 //component imports
+import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 
 //other project imports
 import "../scss/App.scss";
-import cat from "../assets/cat.png";
 import { fetchCharacters } from "../services/fetch";
 
 function App() {
@@ -44,11 +44,7 @@ function App() {
 
   return (
     <div className="main">
-      <header className="header">
-        <img className="cat" src={cat} alt="imagen de un gato mago" />
-        <h1>Harry Potter</h1>
-      </header>
-
+      <Header />
       <Routes>
         <Route
           path="/hp-home"
