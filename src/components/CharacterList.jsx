@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+
 import CharacterCard from "./CharacterCard";
+import Warning from "./Warning";
 import "../scss/CharacterList.scss";
 
 function CharacterList({ characters, filteredCharacter }) {
@@ -18,12 +20,12 @@ function CharacterList({ characters, filteredCharacter }) {
       {characters && characters.length > 0 ? (
         <ul className="list">{renderCharacters}</ul>
       ) : (
-        <div className="warning">
-          <p>
-            🪄 No hay ningún personaje que coincida con la palabra "
-            {filteredCharacter}". 😿
-          </p>
-        </div>
+        <>
+          <Warning
+            text={"No hay ningún personaje que coincida con la palabra "}
+            searchedValue={filteredCharacter}
+          />
+        </>
       )}
     </>
   );

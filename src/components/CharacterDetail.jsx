@@ -3,25 +3,26 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import "../scss/CharacterDetail.scss";
 import { speciesMapper } from "../services/mapper";
+import Warning from "./Warning";
 
 function CharacterDetail({ characters }) {
-  const { id } = useParams();
+  //setting up the return button
   const navigate = useNavigate();
-
-  const character = characters.find((char) => char.id === id);
-
-  if (!character) {
-    return (
-      <div className="warning">
-        <p>🪄 No hay ningún personaje con el id "{id}". 😿</p>
-      </div>
-    );
-  }
-
   const handleReturn = () => {
     navigate("/");
   };
 
+  //identifying the id url param
+  const { id } = useParams();
+  const character = characters.find((character) => character.id === id);
+
+  if (!character) {
+    return (
+      <Warning text={"No hay ningún personaje con el id "} searchedValue={id} />
+    );
+  }
+
+  //defining message for the character's status
   const handleStatus = () => {
     if (character.alive === true) {
       return character.gender.toLowerCase() === "male" ? "Vivo" : "Viva";
@@ -51,6 +52,7 @@ function CharacterDetail({ characters }) {
             {character.gender.toLowerCase() === "male" ? "Hombre" : "Mujer"}
           </p>
           <p>Casa: {character.house ? character.house : "Sin definir"}</p>
+          {/* checking alternate names */}
           {character.alternate_names &&
             character.alternate_names.length > 0 && (
               <p>Otros nombres: {character.alternate_names.join(", ")}</p>
@@ -58,7 +60,7 @@ function CharacterDetail({ characters }) {
         </div>
       </div>
       <button className="detail__button" onClick={handleReturn}>
-        ⬅️ VOLVER
+        ⬅ VOLVER
       </button>
     </div>
   );
