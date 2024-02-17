@@ -4,16 +4,19 @@ import "../scss/Filters.scss";
 
 function Filters({ handleFilter, filteredCharacter, selectedHouse }) {
   const handleInputCharacter = (event) => {
-    event.preventDefault();
     handleFilter("character", event.currentTarget.value);
   };
 
   const handleInputHouse = (event) => {
-    event.preventDefault();
     handleFilter("house", event.currentTarget.value);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Buscar por personaje:</h2>
       <label htmlFor="character"></label>
       <input
