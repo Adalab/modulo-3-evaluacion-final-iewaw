@@ -22,7 +22,7 @@ function Filters({ handleFilter, filteredCharacter, selectedHouse }) {
         id="character"
         placeholder="Hermione"
         onInput={handleInputCharacter}
-        className="filter"
+        className="form__filter"
         value={filteredCharacter}
       />
       <h2>Selecciona la casa:</h2>
@@ -31,7 +31,7 @@ function Filters({ handleFilter, filteredCharacter, selectedHouse }) {
         name="house"
         id="house"
         onInput={handleInputHouse}
-        className="filter"
+        className="form__filter"
         value={selectedHouse}
       >
         <option value={"Todas"}>Todas</option>

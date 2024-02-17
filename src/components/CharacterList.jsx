@@ -7,7 +7,7 @@ function CharacterList({ characters, filteredCharacter }) {
   const renderCharacters = characters.map((character) => {
     return (
       <li key={character.id}>
-        <Link to={`/characters/${character.id}`}>
+        <Link className="link" to={`/characters/${character.id}`}>
           <CharacterCard character={character} />
         </Link>
       </li>

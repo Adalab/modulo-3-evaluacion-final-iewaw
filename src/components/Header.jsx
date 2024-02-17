@@ -4,7 +4,7 @@ import cat from "../assets/cat.png";
 function Header() {
   return (
     <header className="header">
-      <img className="cat" src={cat} alt="imagen de un gato mago" />
+      <img className="header__cat" src={cat} alt="imagen de un gato mago" />
       <h1>Harry Potter</h1>
     </header>
   );
