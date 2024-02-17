@@ -13,16 +13,19 @@ import "../scss/App.scss";
 import { fetchCharacters } from "../services/fetch";
 
 function App() {
+  //state variables
   const [characters, setCharacters] = useState([]);
   const [filteredCharacter, setFilteredCharacter] = useState("");
   const [selectedHouse, setSelectedHouse] = useState("Gryffindor");
 
+  //fetching characters
   useEffect(() => {
     fetchCharacters().then((data) => {
       setCharacters(data);
     });
   }, []);
 
+  //filtering characters
   const filteredCharacters = characters
     .filter((character) =>
       character.name.toLowerCase().includes(filteredCharacter.toLowerCase())
