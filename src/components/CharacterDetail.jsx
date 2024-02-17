@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 import "../scss/CharacterDetail.scss";
 import CharacterCard from "./CharacterCard";
 
 function CharacterDetail({ characters }) {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const character = characters.find((char) => char.id === id);
 
   if (!character) {
@@ -15,7 +18,16 @@ function CharacterDetail({ characters }) {
     );
   }
 
-  return <CharacterCard character={character} />;
+  const handleReturn = () => {
+    navigate("/hp-home");
+  };
+
+  return (
+    <div>
+      <CharacterCard character={character} />
+      <button onClick={handleReturn}>⬅️ VOLVER</button>
+    </div>
+  );
 }
 
 CharacterDetail.propTypes = {

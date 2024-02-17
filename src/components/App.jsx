@@ -51,7 +51,7 @@ function App() {
 
       <Routes>
         <Route
-          path="/"
+          path="/hp-home"
           element={
             <>
               <Filters
