@@ -38,3 +38,18 @@ export function speciesMapper(species) {
             return "¡Es un misterio! 🙀";
     }
 }
+
+export function houseMapper(house) {
+    switch (house.toLowerCase()) {
+        case "gryffindor":
+            return "🦁 Gryffindor ❤️";
+        case "slytherin":
+            return "🐍 Slytherin 💚";
+        case "hufflepuff":
+            return "🦡 Hufflepuff 💛";
+        case "ravenclaw":
+            return "🦅 Ravenclaw 💙";
+        default:
+            return "Sin definir 😾";
+    }
+}

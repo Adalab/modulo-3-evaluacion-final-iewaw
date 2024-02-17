@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate, useParams } from "react-router-dom";
 
 import "../scss/CharacterDetail.scss";
-import { speciesMapper } from "../services/mapper";
+import { speciesMapper, houseMapper } from "../services/mapper";
 import Warning from "./Warning";
 
 function CharacterDetail({ characters }) {
@@ -51,9 +51,11 @@ function CharacterDetail({ characters }) {
           <p>Especie: {speciesMapper(character.species)}</p>
           <p>
             Género:{" "}
-            {character.gender.toLowerCase() === "male" ? "Hombre" : "Mujer"}
+            {character.gender.toLowerCase() === "male"
+              ? "Hombre 👨"
+              : "Mujer 👩"}
           </p>
-          <p>Casa: {character.house ? character.house : "Sin definir"}</p>
+          <p>Casa: {houseMapper(character.house)}</p>
           {/* checking alternate names */}
           {character.alternate_names &&
             character.alternate_names.length > 0 && (
@@ -62,7 +64,7 @@ function CharacterDetail({ characters }) {
         </div>
       </div>
       <button className="detail__button" onClick={handleReturn}>
-        ⬅ VOLVER
+        🔙 VOLVER
       </button>
     </div>
   );
