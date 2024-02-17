@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate, useParams } from "react-router-dom";
 
 import "../scss/CharacterDetail.scss";
+import { speciesMapper } from "../services/mapper";
 
 function CharacterDetail({ characters }) {
   const { id } = useParams();
@@ -21,6 +22,14 @@ function CharacterDetail({ characters }) {
     navigate("/");
   };
 
+  const handleStatus = () => {
+    if (character.alive === true) {
+      return character.gender.toLowerCase() === "male" ? "Vivo" : "Viva";
+    } else {
+      return character.gender.toLowerCase() === "male" ? "Muerto" : "Muerta";
+    }
+  };
+
   return (
     <div className="detail">
       <div className="detail__card">
@@ -35,19 +44,17 @@ function CharacterDetail({ characters }) {
         />
         <div>
           <h2>{character.name}</h2>
-          <p>Estatus: {character.alive ? "Vivo" : "Muerto"}</p>
+          <p>Estatus: {handleStatus()}</p>
+          <p>Especie: {speciesMapper(character.species)}</p>
           <p>
-            Especie:{" "}
-            {character.species.toLowerCase() === "human"
-              ? "Humano"
-              : character.species}
-          </p>
-          <p>
-            Genero:{" "}
+            Género:{" "}
             {character.gender.toLowerCase() === "male" ? "Hombre" : "Mujer"}
           </p>
-          <p>Casa: {character.house}</p>
-          <p>Otros nombres: {character.alternate_names}</p>
+          <p>Casa: {character.house ? character.house : "Sin definir"}</p>
+          {character.alternate_names &&
+            character.alternate_names.length > 0 && (
+              <p>Otros nombres: {character.alternate_names.join(", ")}</p>
+            )}
         </div>
       </div>
       <button onClick={handleReturn}>⬅️ VOLVER</button>

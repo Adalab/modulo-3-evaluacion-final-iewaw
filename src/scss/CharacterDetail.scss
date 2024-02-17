@@ -3,7 +3,8 @@
 .detail {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
+    padding-bottom: 20px;    
 
     &__card {
         width: 240px;
