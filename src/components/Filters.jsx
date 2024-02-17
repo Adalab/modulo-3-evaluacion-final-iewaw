@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import "../scss/Filters.scss";
 
-function Filters({ handleFilter, filteredCharacter }) {
+function Filters({ handleFilter, filteredCharacter, selectedHouse }) {
   const handleInputCharacter = (event) => {
     event.preventDefault();
     handleFilter("character", event.currentTarget.value);
@@ -20,7 +20,7 @@ function Filters({ handleFilter, filteredCharacter }) {
         type="text"
         name="character"
         id="character"
-        placeholder="Harry"
+        placeholder="Hermione"
         onInput={handleInputCharacter}
         className="filter"
         value={filteredCharacter}
@@ -32,6 +32,7 @@ function Filters({ handleFilter, filteredCharacter }) {
         id="house"
         onInput={handleInputHouse}
         className="filter"
+        value={selectedHouse}
       >
         <option value={"Todas"}>Todas</option>
         <option value={"Gryffindor"}>Gryffindor</option>
@@ -46,6 +47,7 @@ function Filters({ handleFilter, filteredCharacter }) {
 Filters.propTypes = {
   handleFilter: PropTypes.func.isRequired,
   filteredCharacter: PropTypes.string.isRequired,
+  selectedHouse: PropTypes.string.isRequired,
 };
 
 export default Filters;

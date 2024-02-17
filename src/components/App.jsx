@@ -11,7 +11,7 @@ import { fetchCharacters } from "../services/fetch";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filteredCharacter, setFilteredCharacter] = useState("");
-  const [selectedHouse, setSelectedHouse] = useState("Todas");
+  const [selectedHouse, setSelectedHouse] = useState("Gryffindor");
 
   useEffect(() => {
     fetchCharacters().then((data) => {
@@ -49,16 +49,17 @@ function App() {
         <Route
           path="/"
           element={
-            <div>
+            <>
               <Filters
                 handleFilter={handleSearch}
                 filteredCharacter={filteredCharacter}
+                selectedHouse={selectedHouse}
               />
               <CharacterList
                 characters={filteredCharacters}
                 filteredCharacter={filteredCharacter}
               />
-            </div>
+            </>
           }
         />
       </Routes>
