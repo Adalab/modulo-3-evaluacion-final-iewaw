@@ -10,7 +10,8 @@ export function fetchCharacters() {
                     image: character.image,
                     house: character.house,
                     gender: character.gender,
-                    alive: character.alive
+                    alive: character.alive,
+                    alternate_names: character.alternate_names
                 }
             })
         })
