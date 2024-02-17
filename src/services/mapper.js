@@ -1,40 +1,40 @@
 export function speciesMapper(species) {
     switch (species.toLowerCase()) {
         case "human":
-            return "Humano";
+            return "Humano 👤";
         case "half-giant":
-            return "Medio-gigante";
+            return "Medio-gigante 🦖";
         case "werewolf":
-            return "Hombre lobo";
+            return "Hombre lobo 🐺";
         case "cat":
-            return "Gato";
+            return "Gato 😻";
         case "goblin":
-            return "Duende";
+            return "Duende 👴";
         case "owl":
-            return "Búho";
+            return "Búho 🦉";
         case "ghost":
-            return "Fantasma";
+            return "Fantasma 👻";
         case "poltergeist":
-            return "Poltergeist";
+            return "Poltergeist 🤡";
         case "three-headed dog":
-            return "Perro de tres cabezas";
+            return "Perro de tres cabezas 🐶🐶🐶";
         case "dragon":
-            return "Dragón";
+            return "Dragón 🐉";
         case "centaur":
-            return "Centauro";
+            return "Centauro 🏇";
         case "house-elf":
-            return "Elfo doméstico";
+            return "Elfo doméstico 👹";
         case "acromantula":
-            return "Acrmántula";
+            return "Acromántula 🕷️";
         case "hippogriff":
-            return "Hipogrifo";
+            return "Hipogrifo 🦅";
         case "giant":
-            return "Gigante";
+            return "Gigante 🦕";
         case "vampire":
-            return "Vampiro";
+            return "Vampiro 🧛";
         case "half-human":
-            return "Medio-humano";
+            return "Medio-humano 😶‍🌫️";
         default:
-            return "¡Es un misterio!";
+            return "¡Es un misterio! 🙀";
     }
 }

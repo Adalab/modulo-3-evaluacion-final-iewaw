@@ -25,9 +25,11 @@ function CharacterDetail({ characters }) {
   //defining message for the character's status
   const handleStatus = () => {
     if (character.alive === true) {
-      return character.gender.toLowerCase() === "male" ? "Vivo" : "Viva";
+      return character.gender.toLowerCase() === "male" ? "Vivo 💓" : "Viva 💓";
     } else {
-      return character.gender.toLowerCase() === "male" ? "Muerto" : "Muerta";
+      return character.gender.toLowerCase() === "male"
+        ? "Muerto ☠️"
+        : "Muerta ☠️";
     }
   };
 

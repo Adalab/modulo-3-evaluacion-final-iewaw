@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import "../scss/CharacterCard.scss";
+import { speciesMapper } from "../services/mapper";
 
 function CharacterCard({ character }) {
   return (
@@ -16,7 +17,7 @@ function CharacterCard({ character }) {
       />
       <div>
         <h2>{character.name}</h2>
-        <p>{character.species}</p>
+        <p>{speciesMapper(character.species)}</p>
       </div>
     </div>
   );
