@@ -57,7 +57,9 @@ function CharacterDetail({ characters }) {
             )}
         </div>
       </div>
-      <button onClick={handleReturn}>⬅️ VOLVER</button>
+      <button className="detail__button" onClick={handleReturn}>
+        ⬅️ VOLVER
+      </button>
     </div>
   );
 }

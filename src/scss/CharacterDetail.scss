@@ -16,7 +16,7 @@
         font-size: 12px;
         padding: 0 20px;
         color: #be5260;
-        margin: 10px;
+        margin: 20px;
         padding-bottom: 10px;
     
         &__image {
@@ -25,6 +25,39 @@
             border-radius: 15px 15px 0 0;
             margin-bottom: 15px;
         }
-
     }
+
+    &__button {
+        color: #be5260;
+        border-radius: 15px;
+        height: 40px;
+        width: 140px;
+        background-color: #fc9b7b;
+        font-family: "Henny Penny", system-ui;
+        font-size: 20px;
+        border: 3px solid #F96B3C;
+        cursor: pointer;
+    }
+}
+
+@media all and (min-width: 760px) {
+    .detail {
+
+        &__card {
+            width: 680px;
+            flex-direction: row;
+            align-items: center;
+            font-size: 20px;
+            gap: 20px;
+            padding: 0 10px 0 0;
+        
+            &__image {
+                min-height: 100%;
+                width: auto;
+                border-radius: 15px 0 0 15px;
+                margin: 0;
+            }
+        }
+    }
+
 }
