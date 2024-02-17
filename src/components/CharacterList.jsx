@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
 import "../scss/CharacterList.scss";
 
@@ -7,7 +7,9 @@ function CharacterList({ characters, filteredCharacter }) {
   const renderCharacters = characters.map((character) => {
     return (
       <li key={character.id}>
-        <CharacterCard character={character} />
+        <Link to={`/characters/${character.id}`}>
+          <CharacterCard character={character} />
+        </Link>
       </li>
     );
   });

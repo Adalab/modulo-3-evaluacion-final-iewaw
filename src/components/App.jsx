@@ -1,11 +1,15 @@
+//React imports
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import "../scss/App.scss";
+//component imports
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
-import cat from "../assets/cat.png";
+import CharacterDetail from "./CharacterDetail";
 
+//other project imports
+import "../scss/App.scss";
+import cat from "../assets/cat.png";
 import { fetchCharacters } from "../services/fetch";
 
 function App() {
@@ -61,6 +65,10 @@ function App() {
               />
             </>
           }
+        />
+        <Route
+          path="/characters/:id"
+          element={<CharacterDetail characters={characters} />}
         />
       </Routes>
     </div>
