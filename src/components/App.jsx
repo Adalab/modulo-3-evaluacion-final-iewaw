@@ -56,6 +56,7 @@ function App() {
     }
   };
 
+  //resetting form values
   const handleReset = () => {
     setFilteredCharacter("");
     setSelectedHouse("Gryffindor");

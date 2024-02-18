@@ -19,7 +19,10 @@ function FilterByGender({ selectedGender, handleFilter }) {
             checked={selectedGender === "Female"}
             onChange={handleInputGender}
           />
-          <label htmlFor="female"> Mujer ♀️</label>
+          <label className="filterRadio__label" htmlFor="female">
+            {" "}
+            Mujer ♀️
+          </label>
         </div>
 
         <div>
@@ -31,7 +34,10 @@ function FilterByGender({ selectedGender, handleFilter }) {
             checked={selectedGender === "Male"}
             onChange={handleInputGender}
           />
-          <label htmlFor="male"> Hombre ♂️</label>
+          <label className="filterRadio__label" htmlFor="male">
+            {" "}
+            Hombre ♂️
+          </label>
         </div>
 
         <div>
@@ -43,7 +49,10 @@ function FilterByGender({ selectedGender, handleFilter }) {
             checked={selectedGender === "All"}
             onChange={handleInputGender}
           />
-          <label htmlFor="all"> Tod@s ✨</label>
+          <label className="filterRadio__label" htmlFor="all">
+            {" "}
+            Tod@s ✨
+          </label>
         </div>
       </div>
     </div>

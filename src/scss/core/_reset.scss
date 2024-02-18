@@ -9,4 +9,16 @@
 :root {
   font-family: "Henny Penny", system-ui;
   color: $font;
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }

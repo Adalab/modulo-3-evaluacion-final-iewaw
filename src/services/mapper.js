@@ -55,7 +55,6 @@ export function houseMapper(house) {
 }
 
 export function statusMapper(status, gender) {
-    console.log(status, gender);
     if (status === true) {
         return gender.toLowerCase() === "male"
             ? "Vivo 🫀"

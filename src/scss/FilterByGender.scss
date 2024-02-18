@@ -11,6 +11,10 @@
     width: 300px;
     align-items: center;
     justify-content: center;
+
+    &__label {
+        cursor: pointer;
+    }
 }
 
 @media all and (min-width: 760px) {

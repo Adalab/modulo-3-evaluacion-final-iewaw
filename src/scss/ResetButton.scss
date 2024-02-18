@@ -12,3 +12,7 @@
     border: 3px solid $border;
     cursor: pointer;    
 }
+
+.resetButton:hover {
+    animation: pulsate 2s infinite;
+}
