@@ -1,0 +1,20 @@
+@import 'core/reset';
+@import 'core/variables';
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 15px 0;
+    gap: 20px;
+    flex-shrink: 0;
+    color: $font;
+    font-size: 10px; 
+    background-color: $dark-bg;
+
+    &__cat {
+        height: 50px;
+        animation: pulsate 5s infinite;
+    }
+}

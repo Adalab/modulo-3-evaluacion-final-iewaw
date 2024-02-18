@@ -8,7 +8,8 @@
     color: $font2;
     font-size: 20px;
     min-width: 100%;
-    padding: 0 30px;
+    padding: 0 20px 10px 20px;
+    background-color: $light-bg;
 
     &__cat {
         margin-top: 20px;
@@ -16,12 +17,12 @@
         margin-right: 20px;
         animation: pulsate 5s infinite;
     }
-
 }
 
 @media all and (min-width: 760px) {
     .header {
         font-size: 40px;
+        gap: 30px;
 
         &__ cat {
             height: 220px;

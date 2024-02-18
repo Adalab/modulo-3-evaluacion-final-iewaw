@@ -7,6 +7,7 @@ import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
+import Footer from "./Footer";
 
 //other project imports
 import "../scss/App.scss";
@@ -66,30 +67,33 @@ function App() {
   return (
     <div className="main">
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Filters
-                handleFilter={handleSearch}
-                filteredCharacter={filteredCharacter}
-                selectedHouse={selectedHouse}
-                selectedGender={selectedGender}
-                handleReset={handleReset}
-              />
-              <CharacterList
-                characters={filteredCharacters}
-                filteredCharacter={filteredCharacter}
-              />
-            </>
-          }
-        />
-        <Route
-          path="/characters/:id"
-          element={<CharacterDetail characters={characters} />}
-        />
-      </Routes>
+      <div className="main__content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  handleFilter={handleSearch}
+                  filteredCharacter={filteredCharacter}
+                  selectedHouse={selectedHouse}
+                  selectedGender={selectedGender}
+                  handleReset={handleReset}
+                />
+                <CharacterList
+                  characters={filteredCharacters}
+                  filteredCharacter={filteredCharacter}
+                />
+              </>
+            }
+          />
+          <Route
+            path="/characters/:id"
+            element={<CharacterDetail characters={characters} />}
+          />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }

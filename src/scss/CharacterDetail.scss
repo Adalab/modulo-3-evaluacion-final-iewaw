@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;    
+    padding: 20px 0 0 0;    
 
     &__card {
         width: 240px;
@@ -21,7 +21,7 @@
         padding-bottom: 10px;
     
         &__image {
-            width: 240px;
+            width: 236px;
             height: 290px;
             border-radius: 15px 15px 0 0;
             margin-bottom: 15px;

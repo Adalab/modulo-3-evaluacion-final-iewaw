@@ -4,7 +4,7 @@
 .form {
     display: grid;
     justify-content: center;
-    margin-bottom: 30px;
+    margin: 30px;
     text-align: center;
     align-items: center;
 
@@ -18,7 +18,7 @@
 @media all and (min-width: 760px) {
     .form {
         gap: 0 20px;
-        margin: 10px 30px;
+        margin: 20px 30px 10px 30px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         align-items: center;
