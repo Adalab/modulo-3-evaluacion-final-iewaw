@@ -1,8 +1,11 @@
+@import 'core/reset';
+@import 'core/variables';
+
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #be5260;
+    color: $font2;
     font-size: 20px;
     min-width: 100%;
     padding: 0 30px;

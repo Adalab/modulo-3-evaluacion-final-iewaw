@@ -1,8 +1,11 @@
+@import 'core/reset';
+@import 'core/variables';
+
 .warning {
     display: flex;
     justify-content: center;
     font-size: 30px;
     margin-top: 40px;
-    color: #be5260;
+    color: $font2;
     padding: 0 20px;
 }

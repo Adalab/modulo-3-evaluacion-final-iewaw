@@ -1,10 +1,11 @@
 @import 'core/reset';
+@import 'core/variables';
 
 .filterRadio {
     border-radius: 15px;
     padding-left: 10px;
     text-align: center;
-    background-color:  #feb8c1;
+    background-color: $medium;
     gap: 5px;
     display: flex;
     width: 300px;

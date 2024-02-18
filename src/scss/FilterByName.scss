@@ -1,15 +1,27 @@
 @import 'core/reset';
+@import 'core/variables';
 
-@import 'core/reset';
+::placeholder {
+  color: $dark-bg;
+}
+
+.filterName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .filterInput {
     width: 300px;
-    height: 30px;
+    height: 35px;
     margin-bottom: 10px;
-    border: 3px solid #feb8c1;;
+    border: 3px solid $medium;
     border-radius: 15px;
     padding-left: 10px;
     text-align: center;
+    font-family: "Henny Penny", system-ui;
+    display: flex;
+    align-items: center;
 }
 
 @media all and (min-width: 760px) {

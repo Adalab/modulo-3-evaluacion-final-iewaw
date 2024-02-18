@@ -35,7 +35,7 @@ function CharacterDetail({ characters }) {
           alt={character.name}
         />
         <div>
-          <h2>{character.name}</h2>
+          <h2 className="detail__card__name">{character.name}</h2>
           <p>Estatus: {statusMapper(character.alive, character.gender)}</p>
           <p>Especie: {speciesMapper(character.species)}</p>
           <p>

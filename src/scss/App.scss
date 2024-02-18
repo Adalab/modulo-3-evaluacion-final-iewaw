@@ -1,6 +1,7 @@
 @import 'core/reset';
+@import 'core/variables';
 
 .main {
-    background: linear-gradient(90deg, #e48484, #F7DBA7);
+    background: linear-gradient(90deg, $dark-bg, $light-bg);
     min-height: 100vh;
 }
