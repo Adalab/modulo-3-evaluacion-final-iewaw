@@ -58,8 +58,8 @@ export function statusMapper(status, gender) {
     console.log(status, gender);
     if (status === true) {
         return gender.toLowerCase() === "male"
-            ? "Vivo 💓"
-            : "Viva 💓";
+            ? "Vivo 🫀"
+            : "Viva 🫀";
     } else {
         return gender.toLowerCase() === "male"
             ? "Muerto ☠️"
