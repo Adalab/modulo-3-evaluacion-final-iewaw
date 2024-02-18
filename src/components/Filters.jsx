@@ -1,48 +1,24 @@
 import PropTypes from "prop-types";
 
 import "../scss/Filters.scss";
+import FilterByName from "./FilterByName";
+import FilterByHouse from "./FilterByHouse";
 
 function Filters({ handleFilter, filteredCharacter, selectedHouse }) {
-  const handleInputCharacter = (event) => {
-    handleFilter("character", event.currentTarget.value);
-  };
-
-  const handleInputHouse = (event) => {
-    handleFilter("house", event.currentTarget.value);
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h2>Buscar por personaje:</h2>
-      <label htmlFor="character"></label>
-      <input
-        type="text"
-        name="character"
-        id="character"
-        placeholder="Hermione"
-        onInput={handleInputCharacter}
-        className="form__filter"
-        value={filteredCharacter}
+      <FilterByName
+        filteredCharacter={filteredCharacter}
+        handleFilter={handleFilter}
       />
-      <h2>Selecciona la casa:</h2>
-      <label htmlFor="house"></label>
-      <select
-        name="house"
-        id="house"
-        onInput={handleInputHouse}
-        className="form__filter"
-        value={selectedHouse}
-      >
-        <option value={"Todas"}>Todas</option>
-        <option value={"Gryffindor"}>Gryffindor</option>
-        <option value={"Ravenclaw"}>Ravenclaw</option>
-        <option value={"Slytherin"}>Slytherin</option>
-        <option value={"Hufflepuff"}>Hufflepuff</option>
-      </select>
+      <FilterByHouse
+        selectedHouse={selectedHouse}
+        handleFilter={handleFilter}
+      />
     </form>
   );
 }
