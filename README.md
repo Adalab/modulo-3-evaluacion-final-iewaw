@@ -4,6 +4,7 @@
 
 Check out this cool project that lets you browse Harry Potter characters.
 It is made with **React** with just a hint of nice **scss**. 
+The data used in this exercise were obtained from [https://hp-api.onrender.com/](https://hp-api.onrender.com/).
 
 ## Getting started
 
