@@ -2,6 +2,12 @@
 @import 'core/variables';
 
 .main {
-    background: linear-gradient(90deg, $dark-bg, $light-bg);
+    background: linear-gradient(90deg, $light-bg, $dark-bg);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        flex-grow: 1;
+    }
 }
