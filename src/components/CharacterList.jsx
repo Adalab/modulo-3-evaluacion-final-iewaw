@@ -6,7 +6,13 @@ import Warning from "./Warning";
 import "../scss/CharacterList.scss";
 
 function CharacterList({ characters, filteredCharacter }) {
-  const renderCharacters = characters.map((character) => {
+  // Sort characters alphabetically by name
+  const sortedCharacters = characters
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  // Create character cards
+  const renderCharacters = sortedCharacters.map((character) => {
     return (
       <li key={character.id}>
         <Link className="link" to={`/characters/${character.id}`}>
@@ -15,6 +21,7 @@ function CharacterList({ characters, filteredCharacter }) {
       </li>
     );
   });
+
   return (
     <>
       {characters && characters.length > 0 ? (
