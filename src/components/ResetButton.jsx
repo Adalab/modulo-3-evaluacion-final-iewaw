@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../scss/ResetButton.scss";
 
 function ResetButton({ handleReset }) {
-  const resetForm = (event) => {
+  const resetForm = () => {
     handleReset();
   };
 

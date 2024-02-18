@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate, useParams } from "react-router-dom";
 
 import "../scss/CharacterDetail.scss";
-import { speciesMapper, houseMapper, statusMapper } from "../services/mapper";
+import { mapSpecies, mapHouses, mapStatus } from "../services/mapper";
 import Warning from "./Warning";
 
 function CharacterDetail({ characters }) {
@@ -36,15 +36,15 @@ function CharacterDetail({ characters }) {
         />
         <div>
           <h2 className="detail__card__name">{character.name}</h2>
-          <p>Estatus: {statusMapper(character.alive, character.gender)}</p>
-          <p>Especie: {speciesMapper(character.species)}</p>
+          <p>Estatus: {mapStatus(character.alive, character.gender)}</p>
+          <p>Especie: {mapSpecies(character.species)}</p>
           <p>
             Género:{" "}
             {character.gender.toLowerCase() === "male"
               ? "Hombre 👨"
               : "Mujer 👩"}
           </p>
-          <p>Casa: {houseMapper(character.house)}</p>
+          <p>Casa: {mapHouses(character.house)}</p>
           {/* checking alternate names */}
           {character.alternate_names &&
             character.alternate_names.length > 0 && (

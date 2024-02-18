@@ -1,4 +1,4 @@
-export function speciesMapper(species) {
+export function mapSpecies(species) {
     switch (species.toLowerCase()) {
         case "human":
             return "Humano 👤";
@@ -39,7 +39,7 @@ export function speciesMapper(species) {
     }
 }
 
-export function houseMapper(house) {
+export function mapHouses(house) {
     switch (house.toLowerCase()) {
         case "gryffindor":
             return "🦁 Gryffindor ❤️";
@@ -54,7 +54,7 @@ export function houseMapper(house) {
     }
 }
 
-export function statusMapper(status, gender) {
+export function mapStatus(status, gender) {
     if (status === true) {
         return gender.toLowerCase() === "male"
             ? "Vivo 🫀"

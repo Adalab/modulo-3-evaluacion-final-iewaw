@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import "../scss/Warning.scss";
 
 function Warning({ text, searchedValue }) {

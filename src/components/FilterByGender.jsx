@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import "../scss/FilterByGender.scss";
 
 function FilterByGender({ selectedGender, handleFilter }) {

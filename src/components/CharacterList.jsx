@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+import "../scss/CharacterList.scss";
 import CharacterCard from "./CharacterCard";
 import Warning from "./Warning";
-import "../scss/CharacterList.scss";
 
 function CharacterList({ characters, filteredCharacter }) {
   // Sort characters alphabetically by name
