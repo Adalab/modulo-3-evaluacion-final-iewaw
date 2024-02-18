@@ -56,6 +56,12 @@ function App() {
     }
   };
 
+  const handleReset = () => {
+    setFilteredCharacter("");
+    setSelectedHouse("Gryffindor");
+    setSelectedGender("Female");
+  };
+
   return (
     <div className="main">
       <Header />
@@ -69,6 +75,7 @@ function App() {
                 filteredCharacter={filteredCharacter}
                 selectedHouse={selectedHouse}
                 selectedGender={selectedGender}
+                handleReset={handleReset}
               />
               <CharacterList
                 characters={filteredCharacters}
