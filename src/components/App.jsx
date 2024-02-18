@@ -17,6 +17,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filteredCharacter, setFilteredCharacter] = useState("");
   const [selectedHouse, setSelectedHouse] = useState("Gryffindor");
+  const [selectedGender, setSelectedGender] = useState("Female");
 
   //fetching characters
   useEffect(() => {
@@ -31,7 +32,14 @@ function App() {
       character.name.toLowerCase().includes(filteredCharacter.toLowerCase())
     )
     .filter((character) =>
-      selectedHouse === "Todas" ? true : character.house === selectedHouse
+      selectedHouse === "All"
+        ? true
+        : character.house.toLowerCase() === selectedHouse.toLowerCase()
+    )
+    .filter((character) =>
+      selectedGender === "All"
+        ? true
+        : character.gender.toLowerCase() === selectedGender.toLowerCase()
     );
 
   const handleSearch = (filterType, value) => {
@@ -41,6 +49,9 @@ function App() {
         break;
       case "house":
         setSelectedHouse(value);
+        break;
+      case "gender":
+        setSelectedGender(value);
         break;
     }
   };
@@ -57,6 +68,7 @@ function App() {
                 handleFilter={handleSearch}
                 filteredCharacter={filteredCharacter}
                 selectedHouse={selectedHouse}
+                selectedGender={selectedGender}
               />
               <CharacterList
                 characters={filteredCharacters}

@@ -55,15 +55,14 @@ export function houseMapper(house) {
 }
 
 export function statusMapper(status, gender) {
-    const handleStatus = () => {
-        if (status === true) {
-            return gender.toLowerCase() === "male"
-                ? "Vivo 💓"
-                : "Viva 💓";
-        } else {
-            return gender.toLowerCase() === "male"
-                ? "Muerto ☠️"
-                : "Muerta ☠️";
-        }
-    };
+    console.log(status, gender);
+    if (status === true) {
+        return gender.toLowerCase() === "male"
+            ? "Vivo 💓"
+            : "Viva 💓";
+    } else {
+        return gender.toLowerCase() === "male"
+            ? "Muerto ☠️"
+            : "Muerta ☠️";
+    }
 }

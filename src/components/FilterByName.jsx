@@ -8,7 +8,7 @@ function FilterByName({ filteredCharacter, handleFilter }) {
   };
 
   return (
-    <>
+    <div className="filterName">
       <h2>Buscar por personaje:</h2>
       <label htmlFor="character"></label>
       <input
@@ -20,7 +20,7 @@ function FilterByName({ filteredCharacter, handleFilter }) {
         className="filterInput"
         value={filteredCharacter}
       />
-    </>
+    </div>
   );
 }
 

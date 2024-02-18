@@ -8,13 +8,13 @@ function FilterByHouse({ selectedHouse, handleFilter }) {
   };
 
   return (
-    <>
+    <div className="filterHouse">
       <h2>Selecciona la casa:</h2>
       <label htmlFor="house"></label>
       <select
         name="house"
         id="house"
-        onInput={handleInputHouse}
+        onChange={handleInputHouse}
         className="filterSelect"
         value={selectedHouse}
       >
@@ -24,7 +24,7 @@ function FilterByHouse({ selectedHouse, handleFilter }) {
         <option value={"Slytherin"}>🐍 Slytherin 💚</option>
         <option value={"Hufflepuff"}>🦡 Hufflepuff 💛</option>
       </select>
-    </>
+    </div>
   );
 }
 

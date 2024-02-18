@@ -1,0 +1,28 @@
+@import 'core/reset';
+
+.filterRadio {
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding-left: 10px;
+    text-align: center;
+    background-color:  #feb8c1;
+    gap: 5px;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media all and (min-width: 760px) {
+
+    .filterGender {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+  .filterRadio {
+        margin-right: 25px;
+     }
+}
