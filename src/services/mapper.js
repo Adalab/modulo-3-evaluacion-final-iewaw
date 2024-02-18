@@ -53,3 +53,17 @@ export function houseMapper(house) {
             return "Sin definir 😾";
     }
 }
+
+export function statusMapper(status, gender) {
+    const handleStatus = () => {
+        if (status === true) {
+            return gender.toLowerCase() === "male"
+                ? "Vivo 💓"
+                : "Viva 💓";
+        } else {
+            return gender.toLowerCase() === "male"
+                ? "Muerto ☠️"
+                : "Muerta ☠️";
+        }
+    };
+}

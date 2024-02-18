@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import "../scss/FilterByHouse.scss";
+
 function FilterByHouse({ selectedHouse, handleFilter }) {
   const handleInputHouse = (event) => {
     handleFilter("house", event.currentTarget.value);
@@ -13,14 +15,14 @@ function FilterByHouse({ selectedHouse, handleFilter }) {
         name="house"
         id="house"
         onInput={handleInputHouse}
-        className="form__filter"
+        className="filterSelect"
         value={selectedHouse}
       >
-        <option value={"Todas"}>Todas</option>
-        <option value={"Gryffindor"}>Gryffindor</option>
-        <option value={"Ravenclaw"}>Ravenclaw</option>
-        <option value={"Slytherin"}>Slytherin</option>
-        <option value={"Hufflepuff"}>Hufflepuff</option>
+        <option value={"All"}>❤️💙 Todas 💚💛</option>
+        <option value={"Gryffindor"}>🦁 Gryffindor ❤️</option>
+        <option value={"Ravenclaw"}>🦅 Ravenclaw 💙</option>
+        <option value={"Slytherin"}>🐍 Slytherin 💚</option>
+        <option value={"Hufflepuff"}>🦡 Hufflepuff 💛</option>
       </select>
     </>
   );

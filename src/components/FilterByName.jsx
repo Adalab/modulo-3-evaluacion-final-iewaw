@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import "../scss/FilterByName.scss";
+
 function FilterByName({ filteredCharacter, handleFilter }) {
   const handleInputCharacter = (event) => {
     handleFilter("character", event.currentTarget.value);
@@ -15,7 +17,7 @@ function FilterByName({ filteredCharacter, handleFilter }) {
         id="character"
         placeholder="Hermione"
         onInput={handleInputCharacter}
-        className="form__filter"
+        className="filterInput"
         value={filteredCharacter}
       />
     </>

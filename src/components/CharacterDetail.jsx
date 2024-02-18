@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate, useParams } from "react-router-dom";
 
 import "../scss/CharacterDetail.scss";
-import { speciesMapper, houseMapper } from "../services/mapper";
+import { speciesMapper, houseMapper, statusMapper } from "../services/mapper";
 import Warning from "./Warning";
 
 function CharacterDetail({ characters }) {
@@ -22,17 +22,6 @@ function CharacterDetail({ characters }) {
     );
   }
 
-  //defining message for the character's status
-  const handleStatus = () => {
-    if (character.alive === true) {
-      return character.gender.toLowerCase() === "male" ? "Vivo 💓" : "Viva 💓";
-    } else {
-      return character.gender.toLowerCase() === "male"
-        ? "Muerto ☠️"
-        : "Muerta ☠️";
-    }
-  };
-
   return (
     <div className="detail">
       <div className="detail__card">
@@ -47,7 +36,7 @@ function CharacterDetail({ characters }) {
         />
         <div>
           <h2>{character.name}</h2>
-          <p>Estatus: {handleStatus()}</p>
+          <p>Estatus: {statusMapper(character.alive, character.gender)}</p>
           <p>Especie: {speciesMapper(character.species)}</p>
           <p>
             Género:{" "}
