@@ -2,7 +2,10 @@ import PropTypes from "prop-types";
 
 import "../scss/Warning.scss";
 
-function Warning({ text, searchedValue }) {
+function Warning({
+  text = "Ha ocurrido el siguiente error: ",
+  searchedValue = "404 Not Found",
+}) {
   return (
     <div className="warning">
       <p>
@@ -13,8 +16,8 @@ function Warning({ text, searchedValue }) {
 }
 
 Warning.propTypes = {
-  text: PropTypes.string.isRequired,
-  searchedValue: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  searchedValue: PropTypes.string,
 };
 
 export default Warning;
