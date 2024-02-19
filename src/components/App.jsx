@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="main">
       <Header />
-      <div className="main__content">
+      <main className="main__content">
         <Routes>
           <Route
             path="/"
@@ -92,7 +92,7 @@ function App() {
             element={<CharacterDetail characters={characters} />}
           />
         </Routes>
-      </div>
+      </main>
       <Footer />
     </div>
   );
